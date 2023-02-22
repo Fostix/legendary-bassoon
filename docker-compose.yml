@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+
+  web:
+    container_name: nginxsite 
+    build: .
+    image: nginxsite:0.0.1
+    volumes:
+      - ./templates:/etc/nginx/templates
+    ports:
+      - "8080:80"
+    environment:
+      - NGINX_HOST=foobar.com
+      - NGINX_PORT=80
